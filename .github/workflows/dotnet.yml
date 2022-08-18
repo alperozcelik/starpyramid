@@ -24,4 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Run
-      run: ls /home/runner/work/starpyramid/starpyramid/StarPyramid
+      run: ls /home/runner/work/starpyramid/starpyramid/StarPyramid/Bin
