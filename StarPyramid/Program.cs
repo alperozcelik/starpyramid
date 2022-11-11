@@ -1,26 +1,23 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 
-namespace StarPyramid
+namespace StarPyramid;
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine(
-                new[] { Enumerable.Range(1, 10) }
-                .Select(p => p.Where(p1 => p1 % 2 != 0)
-                              .Select(item =>
-                                    new string(' ', (p.Count() - item) / 2) +
-                                    new string('*', item) +
-                                     Environment.NewLine)
-                )
-                .FirstOrDefault()
-                .Aggregate("", (agg, item) => agg + item)
-            );
+        Console.WriteLine(
+            new[] { Enumerable.Range(1, 10) }
+            .Select(p => p.Where(p1 => p1 % 2 != 0)
+                            .Select(item =>
+                                new string(' ', (p.Count() - item) / 2) +
+                                new string('*', item) +
+                                    Environment.NewLine)
+            )
+            .FirstOrDefault()
+            .Aggregate("", (agg, item) => agg + item)
+        );
 
-            Console.ReadLine();
-        }
+        Console.ReadLine();
     }
 }
